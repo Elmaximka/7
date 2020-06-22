@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User implements UserDetails {
 
     @Id
@@ -58,12 +58,10 @@ public class User implements UserDetails {
 
     public void addRole(Role role) {
         roles.add(role);
-        role.getUserRoles().add(this);
     }
 
     public void removeRole(Role role) {
         roles.remove(role);
-        role.getUserRoles().remove(this);
     }
 
     public void setPassword(String password) {

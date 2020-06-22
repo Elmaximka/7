@@ -31,16 +31,6 @@ public class Role implements GrantedAuthority {
         this.role = role;
     }
 
-    public Collection<User> getUserRoles() {
-        return userRoles;
-    }
-
-    public void setUserRoles(Set<User> userRoles) {
-        this.userRoles = userRoles;
-    }
-
-    @ManyToMany(mappedBy = "roles")
-    private Collection<User> userRoles = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
